@@ -1,0 +1,6 @@
+//on DOM load
+$(function{
+
+
+
+})
