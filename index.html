@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-
-
-
 <html>
+
 <header>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
   <title>Pomodoro Timer Clock</title>
 </header>
+
 <body>
   <div id="timerBox" class="orangeBorder">
     <div class="orangeBorder digital clockFace">
@@ -20,10 +19,17 @@
         <div class="adjDiv orangeBorder digital" id="workFace">00</div>
         <div><button class="adjButton orangeBorder" id="workMinus">-</button></div>
       </div>
-      <div class="startButtonBox">
-        <button id="start" class="orangeBorder">
-          <i class="fa fa-play"></i>
-        </button>
+      <div class="mainButtonBox">
+        <div id="startbuttonBox">
+          <button id="start" class="orangeBorder">
+            <i class="fa fa-play"></i>
+          </button>
+        </div>
+        <div class="resetButtonbox">
+          <button id="reset" class="orangeBorder">
+            RESET
+          </button>
+        </div>
       </div>
       <div class="adjButtonBox">
         <div><button class="adjButton orangeBorder" id="restPlus">+</button></div>
@@ -33,9 +39,11 @@
     </div>
   </div>
 </body>
+
 <footer>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <!-- <script src="jquery-3.2.1.min.js"></script> -->
   <script src="script.js"></script>
 </footer>
+
 </html>

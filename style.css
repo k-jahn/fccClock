@@ -2,7 +2,6 @@
   font-family: zeroOneDigit;
   src: url(01digit.ttf);
 }
-
 body {
   background-color: #ddd;
 }
@@ -17,6 +16,9 @@ body {
   font-family: zeroOneDigit;
   text-align: center;
   background: #880;
+}
+.digitalOn{
+  background: #aa0 !important;
 }
 #timerBox {
   width: 400px;
@@ -43,9 +45,12 @@ div.adjButtonBox {
   display: flex;
   flex-direction: column;
   align-content: center;
+  justify-content: center;
 }
-div.startButtonBox{
-  text-align: center; 
+div.mainButtonBox{
+  display: flex;
+  flex-direction: column;
+  align-content: : center; 
 }
 div.adjDiv {
   width: 60px;
@@ -59,11 +64,15 @@ button {
 }
 .adjButton {
   font-size: 20px;
+  font-weight: bold;
   height: 35px;
   width: 35px;
+  border-radius: 50%;
 }
 #start {
-  font-size: 50px;
-  padding: -3px 25px;
+  font-size: 40px;
+  height: 70px;
+  width: 70px;
+  border-radius: 25px;
 }
 
