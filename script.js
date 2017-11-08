@@ -1,7 +1,12 @@
 //define vars
-var time={t:1500,work:1500,rest:300}; // running clock time.t in seconds
+var time={
+	t:1500, //current clock time
+	work:1500, //work interval
+	rest:300, //rest interval
+	isOn: false //clock runnung boolean
+}; 
 var clockCode; //time.tout code for clock
-var onOff=false; //time.tr running boolean
+// var onOff=false; //time.tr running boolean
 
 
 //define functions
@@ -55,24 +60,23 @@ function adjInit(name,plusMinus){ //adjust init values of work/rest
 }
 
 $("document").ready(function(){  //on DOM load
-	//initial 
+	//initial display
 	displayClock();
 	displayInit('work');
 	displayInit('rest');
 
 	//start button behavior
 	$("#start").click(function(){
-		if (onOff) {
+		if (time.isOn) {
 			window.clearTimeout(clockCode);
 			$("#start").html('<i class="fa fa-play"></i>');
-			onOff=false;
+			time.isOn=false;
 		} else {
 			setTimeout(runClock,1000);
 			$("#start").html('<i class="fa fa-pause"></i>');
-			onOff=true;
+			time.isOn=true;
 		}
 	});
-
 	
 	$("#workPlus").click(function(){
 		adjInit('work','+');
@@ -86,9 +90,4 @@ $("document").ready(function(){  //on DOM load
 	$("#restMinus").click(function(){
 		adjInit('rest','-');
 	});
-
-
-
-
-
 });
