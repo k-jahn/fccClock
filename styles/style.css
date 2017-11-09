@@ -1,0 +1,116 @@
+/*general*/
+@font-face {
+  font-family: zeroOneDigit;
+  src: url(01digit.ttf);
+}
+body {
+  background-color: #aaa;
+  transition: background-color 2s ease-out;
+  text-align: center;
+  font-family: "roboto", sans-serif;
+}
+.orangeBorder {
+  border-style: solid;
+  border-width: 4px;
+  border-color: #a22;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px black;
+}
+
+/*layout*/
+#timerBox {
+  width: 400px;
+  height: 400px;
+  margin: 50px auto;
+  border-radius: 50%;
+  background-color: #500;
+  box-shadow: 10px 10px 5px grey;
+  display: flex;
+  flex-direction: column;
+}
+div.buttonBox {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0px 25px;
+}
+div.adjButtonBox {
+  margin: 10px 20px;
+  align-content: center;
+  justify-content: center;
+}
+div.mainButtonBox{
+  display: flex;
+  flex-direction: column;
+  align-content: : center;
+  justify-content: center; 
+}
+
+
+/*timer displays*/
+.clockFace {
+  width: 250px;
+  height: 50px;
+  margin: 110px auto 10px auto;
+  padding: 5px 15px;
+  font-size: 50px;
+}
+.initFace {
+  width: 60px;
+  font-size: 40px;
+  text-align: center;
+  /*vertical-align: middle;*/
+  padding: 5px 0px;
+}
+/*display styling*/
+.digital {
+  font-family: zeroOneDigit;
+  color: #000;
+  text-shadow: 2px 2px #555;
+  text-align: center;
+  background: #770;
+  transition: background-color 0.3s ease-out;
+}
+.digitalOn{
+  background: #bb0 !important;
+}
+
+/*buttons*/
+button {
+  background: #300;
+  margin: 2px;
+  color: #fff;
+}
+.buttonOff {
+  color: #000 !important;
+}
+.adjButton {
+  font-size: 20px;
+  font-weight: bold;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+#start {
+  font-size: 40px;
+  height: 70px;
+  width: 70px;
+  border-radius: 25px;
+}
+
+/*labels*/
+.modeLabel {
+  color: #000;
+
+}
+.modeLabelOn {
+  color: #fff !important;
+}
+
+/*background states*/
+.workBackground{
+  background-color: #eee;
+}
+.restBackground{
+  background-color: #444;
+}

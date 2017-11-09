@@ -4,10 +4,11 @@ var time={
 	work:1500, //work interval
 	rest:300, //rest interval
 	isOn: false, //clock runnung boolean
-	reset: true, //reset mode active?
-	mode: "work" //which cycle is active
+	reset: true, //reset active boolean
+	mode: "work" //active mode
 }; 
 var clockCode; //time.out code for clock
+var beep = new Audio('sounds/beep.mp3'); // audio object for beep sound
 
 
 //define functions
@@ -33,7 +34,9 @@ function resetClock(){ //reset the clock
 	stopClock();
 	time.reset = true;
 	time.t=time.work;
-	$('.digitalOn').removeClass('.digitalOn');
+	time.mode="work";
+	$('.digitalOn').removeClass('digitalOn');
+	$(".modeLabel").removeClass('modeLabelOn');
 	displayClock();
 }
 function fmt(x){ // convert time to string and add "0" for disp
@@ -53,15 +56,30 @@ function displayInit(name){ //display work/rest init values
 	var m = time[name]/60;
 	$('#'+name+'Face').html(fmt(m));
 }
-function displayMode(){
+function displayMode(){ //display current mode
 	$(".adjDiv").removeClass('digitalOn');
+	$(".modeLabel").removeClass('modeLabelOn');
 	$("#"+time.mode+'Face').addClass('digitalOn');
+	$("#"+time.mode+'Label').addClass('modeLabelOn');
+	$('body').removeClass("workBackground");
+	$('body').removeClass("restBackground");
+	$('body').addClass(time.mode+"Background")	
 }
-function alarm(){ //placeholder alarm function
+function displayReset(){
+	if (time.reset) {
+		$('#reset').addClass('buttonOff');
+	} else {
+		$('#reset').removeClass('buttonOff');
+	}
+}
+function alarm(){ //alarm function
 	console.log("beep!");
 	if (time.mode == 'work'){
-
+		time.mode='rest';
 	}
+	time.t=time[time.mode];
+	setTimeout(runClock,1000);
+	displayMode();
 }
 function adjInit(name,plusMinus){ //adjust init values of work/rest 
 	if (plusMinus == "+") {
@@ -80,12 +98,13 @@ function adjInit(name,plusMinus){ //adjust init values of work/rest
 	}
 }
 
-//run stuff on DOM Load!!
+//run this stuff on DOM Load!!
 $("document").ready(function(){
 	//initial display
 	displayClock();
 	displayInit('work');
 	displayInit('rest');
+	displayReset();
 
 	//start button behavior
 	$("#start").click(function(){
@@ -99,6 +118,7 @@ $("document").ready(function(){
 			$(".clockFace").addClass('digitalOn');
 			displayMode();
 			time.reset=false; //reset mode off
+			displayReset();
 		}
 	});
 	
@@ -119,5 +139,6 @@ $("document").ready(function(){
 	//reset button behavior
 	$('#reset').click(function(){
 		resetClock();
+		displayReset();
 	});
 });

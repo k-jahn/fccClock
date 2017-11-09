@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
 
-<header>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="style.css">
+<head>
+  <!-- meta title etc -->
+  <meta charset="utf-8">
   <title>Pomodoro Timer Clock</title>
-</header>
+  <link rel="icon" type="image/png" href="images/tomato.png">
+  <!-- stylesheets -->
+  <link href="styles/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <!-- scripts -->
+  <script src="scripts/jquery-3.2.1.min.js"></script>
+  <script src="scripts/script.js"></script>
+</head>
 
 <body>
   <div id="timerBox" class="orangeBorder">
@@ -16,8 +22,9 @@
     <div class="row buttonBox">
       <div class="adjButtonBox">
         <div><button class="adjButton orangeBorder" id="workPlus">+</button></div>
-        <div class="adjDiv orangeBorder digital" id="workFace">00</div>
+        <div class="initFace orangeBorder digital" id="workFace">00</div>
         <div><button class="adjButton orangeBorder" id="workMinus">-</button></div>
+        <div id="workLabel" class="modeLabel">Work</div>
       </div>
       <div class="mainButtonBox">
         <div id="startbuttonBox">
@@ -33,17 +40,22 @@
       </div>
       <div class="adjButtonBox">
         <div><button class="adjButton orangeBorder" id="restPlus">+</button></div>
-        <div class="adjDiv orangeBorder digital" id="restFace">00</div>
+        <div class="initFace orangeBorder digital" id="restFace">00</div>
         <div><button class="adjButton orangeBorder" id="restMinus">-</button></div>
+        <div id="restLabel" class="modeLabel">Rest</div>
       </div>
     </div>
   </div>
 </body>
 
 <footer>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <!-- <script src="jquery-3.2.1.min.js"></script> -->
-  <script src="script.js"></script>
+  <p>
+    A <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Pomodoro Timer</a> by <a href="https://k-jahn.github.io">Konrad</a>
+  </p>
+  <p>
+    Inspired by <a href="www.freecodecamp.org">freeCodeCamp</a>
+  </p>
+  <p>2017</p>
 </footer>
 
 </html>
